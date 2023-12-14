@@ -15,7 +15,7 @@ def recursive_filter(image, a, d):
     for i in range(image.shape[2]):  
         for x in range(1, image.shape[0]):  
             for y in range(1, image.shape[1]):  
-                filtered_image[x, y, i] = (1 - a*d) * image[x, y, i] + a*d * filtered_image[x - 1, y, i]
+                filtered_image[x, y, i] = (1 - a**d) * image[x, y, i] + a**d * filtered_image[x - 1, y, i]
 
     return np.clip(filtered_image, 0, 255).astype(np.uint8)
 
